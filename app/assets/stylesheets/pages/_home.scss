@@ -7,7 +7,6 @@
   background-image: linear-gradient(to left, violet,red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 40px;
   left: 0;
     line-height: 200px;
     margin-top: -100px;
@@ -16,4 +15,10 @@
     top: 50%;
     width: 100%;
 
+
+}
+
+h1 {
+  font-family: $title;
+  font-size: 80px;
 }
