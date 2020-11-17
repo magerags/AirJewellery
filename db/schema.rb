@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_16_161000) do
+ActiveRecord::Schema.define(version: 2020_11_17_135250) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 2020_11_16_161000) do
     t.string "is_rented"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "jewellery_id", null: false
-    t.index ["jewellery_id"], name: "index_jewelleries_on_jewellery_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_jewelleries_on_user_id"
   end
 
   create_table "loans", force: :cascade do |t|
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_16_161000) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "jewelleries", "jewelleries"
+  add_foreign_key "jewelleries", "users"
   add_foreign_key "loans", "jewelleries"
   add_foreign_key "loans", "users"
 end
