@@ -1,1 +1,18 @@
+<p>
+  <strong>Name:</strong>
+  <%= @jewellery.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @jewellery.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @jewellery.price %>
+</p>
+
+  <%= link_to 'Edit', edit_jewellery_path(@jewellery) %> |
+<%= link_to 'Back', jewelleries_path %>
 
