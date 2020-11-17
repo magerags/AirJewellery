@@ -2,7 +2,7 @@ class JewelleriesController < ApplicationController
   before_action :set_jewellery, only: [:show, :destroy]
 
   def index
-    @jewellerys = Jewellery.all
+    @jewelleries = Jewellery.all
   end
 
   def show
