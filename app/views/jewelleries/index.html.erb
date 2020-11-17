@@ -1,4 +1,18 @@
-<h1>what's up</h1>
-<% @jewelleries.each do |j| %>
-<% j.name %>
-<% end %>
+
+
+<h1 style="color:pink;">Jewelleries</h1>
+
+  <tbody>
+    <% @jewelleries.each do |jewellerie| %>
+      <tr>
+        <td><%= jewellery.name %></td>
+        <td><%= link_to 'Show', jewellerie %></td>
+          <td><%= link_to 'Edit', edit_jewellery_path(jewellery) %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Jewellery', new_jewellery_path %>
