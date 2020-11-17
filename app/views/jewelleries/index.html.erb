@@ -1,15 +1,16 @@
 
-
-<h1 style="color:pink;">Jewelleries</h1>
+<br>
+<h1 style="color:pink;" class="text-center">Jewelleries</h1>
    <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
+    <%= link_to jewellery do%>
     <div class="card">
-      <tr>
-        <h2 style="color: pink;"><td><%= jewellery.name %></td></h2>
-        <td><%= link_to 'Show', jewellery %></td>
-
-      </tr>
+      <div class="card-image" style="background-image: url(<%=jewellery.photo%>)"></div>
+      <div class="card-body">
+          <h5 style="color: pink;"><%= jewellery.name %></h5>
       </div>
+    </div>
+    <% end %>
 <% end %>
 </div>
 <br>
