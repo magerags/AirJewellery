@@ -30,7 +30,7 @@ class JewelleriesController < ApplicationController
   private
 
   def jewellery_params
-    params.require(:jewellery).permit(:name, photos: [])
+    params.require(:jewellery).permit(:name, :description, :price, photos: [])
   end
 
   def set_jewellery
