@@ -1,18 +1,17 @@
 
 
 <h1 style="color:pink;">Jewelleries</h1>
-
-  <tbody>
+   <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
+    <div class="card">
       <tr>
-        <td><%= jewellery.name %></td>
+        <h2 style="color: pink;"><td><%= jewellery.name %></td></h2>
         <td><%= link_to 'Show', jewellery %></td>
-          <td><%= link_to 'Edit', edit_jewellery_path(jewellery) %></td>
-        <% end %>
-      </tr>
-  </tbody>
-</table>
 
+      </tr>
+      </div>
+<% end %>
+</div>
 <br>
 
 <%= link_to 'New Jewellery', new_jewellery_path %>
