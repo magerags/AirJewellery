@@ -1,1 +1,38 @@
+<!-- <!DOCTYPE html>
+<html>
+ <FORM>
+    <P>
+    Name: <INPUT type="text" name="Name"><BR>
+    Description: <INPUT type="text" name="description"><BR>
+    Price: <INPUT type="text" name="price"><BR>
+      Photo: <INPUT type="file" name="photo"><BR>
+    <INPUT type="submit" value="Find"> <INPUT type="reset">
+          <head>
+    <title>Title of the document</title>
+    <style>
+body {
+  color:pink
+}
+</style>
+  </head>
+  <body style="background-color:#000000;">
+    </P>
+ </FORM> -->
 
+<div class="m-5">
+<%= simple_form_for(@jewellery) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+</div>
+<% end %>
