@@ -10,7 +10,7 @@ Jewellery.destroy_all
 User.destroy_all
 
 fe = ['gold', 'silver', 'bronze', 'platinum', 'stainless steel']
-se = ['ring', 'necklace', 'bracelet', 'anklet', 'pendent', 'watch']
+se = ['ring', 'necklace', 'bracelet', 'anklet', 'pendant', 'watch']
 te = ['diamonds', 'emeralds', 'rubies', 'white gold elements', 'a diamond']
 
 # https://loremflickr.com/400/400/jewellery
