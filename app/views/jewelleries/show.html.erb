@@ -13,6 +13,15 @@
   <p style="color:grey;"> <strong>Price:</strong>
  <%= @jewellery.price %>£
 </p>
+
+</p>
 </div>
-  <%= link_to 'Edit' %> |
-<%= link_to 'Back', jewelleries_path %>
+  <%= link_to 'Edit', edit_jewellery_path %> |
+<%= link_to 'Back', jewelleries_path %> |
+ |
+<% if @jewellery.loan %>
+<%= link_to "show loan", loan_path(@jewellery.loan) %>
+<% else %>
+<%= link_to "new loan", new_jewellery_loan_path(@jewellery) %>
+<% end %>
+

@@ -1,0 +1,9 @@
+<h2 class = "rainbow-text"> Congratulations your loan is from <%= @loan.to %>
+ to <%= @loan.from %>
+ <%= link_to loan_path(@loan),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
+      <i class="fas fa-minus-circle"></i></h2>
+      <% end %>
+
+<%= link_to "Jewellery", jewellery_path(@loan.jewellery) %>
