@@ -11,17 +11,30 @@
 
 
   <p style="color:grey;"> <strong>Price:</strong>
- <%= @jewellery.price %>£
+ £<%= @jewellery.price %> per day
 </p>
 
 </p>
 </div>
-  <%= link_to 'Edit', edit_jewellery_path %> |
-<%= link_to 'Back', jewelleries_path %> |
- |
+<div class="show-image row">
+<% @jewellery.photos.each do |photo| %>
+  <div class="col-sm-12 col-md-6 col-lg-3"><%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %></div>
+<% end %>
+</div>
+<div class="text-center">
+<%= link_to jewelleries_path do %>
+<button class="btn btn-primary mx-1">back</button>
+<% end %>
+<%= link_to edit_jewellery_path do %>
+<button class="btn btn-primary mx-1">edit</button>
+<% end %>
+<%= link_to @jewellery, method: :delete, data: { confirm: 'Are you sure?'} do %>
+<button class="btn btn-primary mx-1">delete</button>
+<% end %>
+</div>
+
 <% if @jewellery.loan %>
 <%= link_to "show loan", loan_path(@jewellery.loan) %>
 <% else %>
 <%= link_to "new loan", new_jewellery_loan_path(@jewellery) %>
 <% end %>
-
