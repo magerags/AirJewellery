@@ -1,2 +1,13 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "new";
+@import "show";
+@import "card";
+
+.wrapper {
+  display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    margin: 60px;
+    grid-row-gap: 1px;
+    grid-column-gap: 1px;
+}

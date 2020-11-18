@@ -1,4 +1,4 @@
 class Loan < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :jewellery_id
+  belongs_to :user
+  belongs_to :jewellery
 end

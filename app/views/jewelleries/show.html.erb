@@ -1,0 +1,18 @@
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+<div class = "card-show">
+<p>
+  <h2 class="jewellery" style="color: pink;"> <%=  @jewellery.name %></h2>
+</p>
+
+
+  <p style ="color:grey;"> <strong>Description:</strong>
+  <%= @jewellery.description %> </p>
+
+
+  <p style="color:grey;"> <strong>Price:</strong>
+ <%= @jewellery.price %>£
+</p>
+</div>
+  <%= link_to 'Edit' %> |
+<%= link_to 'Back', jewelleries_path %>
