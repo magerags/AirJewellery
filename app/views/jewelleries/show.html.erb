@@ -23,18 +23,19 @@
 </div>
 <div class="text-center">
 <%= link_to jewelleries_path do %>
-<button class="btn btn-primary mx-1">back</button>
+<div class="btn btn-primary mx-1">back</div>
 <% end %>
 <%= link_to edit_jewellery_path do %>
-<button class="btn btn-primary mx-1">edit</button>
+<div class="btn btn-primary mx-1"><p>edit</p></div>
 <% end %>
 <%= link_to @jewellery, method: :delete, data: { confirm: 'Are you sure?'} do %>
-<button class="btn btn-primary mx-1">delete</button>
+<div class="btn btn-primary mx-1">delete</div>
 <% end %>
 </div>
+<br>
 
 <% if @jewellery.loan %>
-<%= link_to "show loan", loan_path(@jewellery.loan) %>
+<h4 class="text-center"><%= link_to "SHOW LOAN", loan_path(@jewellery.loan) %></h4>
 <% else %>
-<%= link_to "new loan", new_jewellery_loan_path(@jewellery) %>
+<h4 class="text-center"><%= link_to "NEW LOAN", new_jewellery_loan_path(@jewellery) %></h4>
 <% end %>

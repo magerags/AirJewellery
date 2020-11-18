@@ -34,13 +34,13 @@ a:hover {
 }
 
 .card-show {
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 500px;
   text-align: center;
- background-color: black;
-  margin: 0 auto; /* Added */
-        float: none; /* Added */
-        margin-bottom: 10px;
+  background-color: black;
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
   font-family: 'Dancing Script', cursive;
   font-size: 25px;
 }
