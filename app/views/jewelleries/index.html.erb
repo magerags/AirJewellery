@@ -1,6 +1,6 @@
 
 <br>
-<h1 style="color:pink;" class="text-center">Jewelleries</h1>
+<h1 class="text-center">Jewelleries</h1>
    <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
     <%= link_to jewellery do%>
@@ -19,4 +19,4 @@
 </div>
 <br>
 
-<%= link_to 'New Jewellery', new_jewellery_path %>
+<%= link_to 'New Jewellery', new_jewellery_path, class: "btn-primary" %>

@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "jewellery_id", null: false
     t.bigint "user_id", null: false
+    t.datetime "from"
+    t.datetime "to"
     t.index ["jewellery_id"], name: "index_loans_on_jewellery_id"
     t.index ["user_id"], name: "index_loans_on_user_id"
   end

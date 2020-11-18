@@ -1,5 +1,5 @@
 class JewelleriesController < ApplicationController
-  before_action :set_jewellery, only: [:show, :destroy]
+  before_action :set_jewellery, only: [:show, :edit, :update, :destroy]
 
   def index
     @jewelleries = Jewellery.all
@@ -21,6 +21,13 @@ class JewelleriesController < ApplicationController
     else
       render :new
     end
+  end
+  def edit
+  end
+
+  def update
+    @jewellery.update(jewellery_params)
+    redirect_to jewellery_path(@jewellery)
   end
 
   def destroy
