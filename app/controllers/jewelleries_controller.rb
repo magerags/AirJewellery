@@ -15,6 +15,7 @@ class JewelleriesController < ApplicationController
 
   def create
     @jewellery = Jewellery.new(jewellery_params)
+    @jewellery.user = current_user
     if @jewellery.save
       redirect_to jewelleries_path(@jewellery)
     else

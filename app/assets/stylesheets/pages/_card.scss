@@ -35,7 +35,7 @@ a:hover {
 
 .card-show {
    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 500px;
   text-align: center;
  background-color: black;
   margin: 0 auto; /* Added */
@@ -44,11 +44,27 @@ a:hover {
   font-family: 'Dancing Script', cursive;
   font-size: 25px;
 }
+
 .jewellery {
   font-family:'Righteous', cursive;
   font-size: 40px;
   background-image: linear-gradient(to left, violet,red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
 
+.show-image {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+
+  img {
+    border-radius: 10px;
+    margin: 5px
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
 }
