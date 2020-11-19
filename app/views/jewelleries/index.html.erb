@@ -1,11 +1,15 @@
 
 <br>
-<h1 style="color:pink;" class="text-center">Jewelleries</h1>
+<h1 class="text-center gradient">Jewelleries</h1>
    <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
     <%= link_to jewellery do%>
     <div class="card">
-      <div class="card-image" style="background-image: url(<%=jewellery.photo%>)"></div>
+      <% if jewellery.photos.attached? %>
+      <div class="card-image" style="background-image: url('<%= cl_image_path jewellery.photos.first.key, height: 200, width: 300, crop: :fill %>')"></div>
+      <% else %>
+      <div class="card-image" style="background-image: url('https://loremflickr.com/400/400/jewellery')"></div>
+      <% end %>
       <div class="card-body">
           <h5 style="color: pink;"><%= jewellery.name %></h5>
       </div>
@@ -15,4 +19,4 @@
 </div>
 <br>
 
-<%= link_to 'New Jewellery', new_jewellery_path %>
+<%= link_to 'New Jewellery', new_jewellery_path, class: "btn-primary" %>
