@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_114804) do
+ActiveRecord::Schema.define(version: 2020_11_19_145503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,9 +43,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
     t.string "is_rented"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "jewellery_id", null: false
     t.bigint "user_id", null: false
-    t.index ["jewellery_id"], name: "index_jewelleries_on_jewellery_id"
     t.index ["user_id"], name: "index_jewelleries_on_user_id"
   end
 
@@ -56,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
     t.bigint "user_id", null: false
     t.datetime "from"
     t.datetime "to"
+    t.float "total_price"
     t.index ["jewellery_id"], name: "index_loans_on_jewellery_id"
     t.index ["user_id"], name: "index_loans_on_user_id"
   end
@@ -73,7 +72,6 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "jewelleries", "jewelleries"
   add_foreign_key "jewelleries", "users"
   add_foreign_key "loans", "jewelleries"
   add_foreign_key "loans", "users"
