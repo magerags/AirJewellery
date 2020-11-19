@@ -1,9 +1,14 @@
-<h2 class = "rainbow-text"> Congratulations your loan is from <%= @loan.to %>
- to <%= @loan.from %>
- <%= link_to loan_path(@loan),
+<div class="wrapper">
+<div class= "container">
+<h2 style ="color:pink;">  Your loan is <%= @loan.jewellery.name %></h2>
+  <p style = "color:pink;"> <%= @loan.jewellery.description %></p>
+<%= link_to loan_path(@loan),
       method: :delete,
       data: { confirm: "Are you sure?" } do %>
-      <i class="fas fa-minus-circle"></i></h2>
+      <i class="fas fa-minus-circle"></i>
       <% end %>
-
-<%= link_to "Jewellery", jewellery_path(@loan.jewellery) %>
+    </div>
+<p style = "color:pink";>   <%= link_to "Would you like to loan another item?" , jewelleries_path %> </p>
+<p style = "color:pink;"> By loaning this item you have helped save the planet, thank you! </p>
+<p> <%= link_to "Back", loans_path(@loans) %> </p>
+</div>
