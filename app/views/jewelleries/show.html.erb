@@ -37,5 +37,15 @@
 <% if @jewellery.loan %>
 <h4 class="text-center gradient"><%= link_to "SHOW LOAN", loan_path(@jewellery.loan) %></h4>
 <% else %>
-<h4 class="text-center gradient"><%= link_to "NEW LOAN", new_jewellery_loan_path(@jewellery) %></h4>
+<div class="form-show">
+        <%= simple_form_for([ @jewellery, @loan ]) do |form| %>
+         <h2 style ="color:pink;"><%= form.input :to %></h2>
+          <h2 style ="color:pink;"><%= form.input :from %></h2>
+          <%= form.button :submit, class: "btn-success" %>
+        <% end %>
+
+</div>
+
+<%= link_to "Go back", jewellery_path(@jewellery)%>
+
 <% end %>

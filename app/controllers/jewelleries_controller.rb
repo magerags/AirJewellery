@@ -12,6 +12,7 @@ end
 
   def show
     @jewellery
+    @loan = Loan.new
   end
 
   def new
