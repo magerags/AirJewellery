@@ -1,14 +1,18 @@
+profile
 <div class="wrapper">
 <div class= "container">
 <h2 style ="color:pink;">  Your loan is <%= @loan.jewellery.name %></h2>
   <p style = "color:pink;"> <%= @loan.jewellery.description %></p>
 <%= link_to loan_path(@loan),
+
       method: :delete,
       data: { confirm: "Are you sure?" } do %>
       <i class="fas fa-minus-circle"></i>
       <% end %>
+
     </div>
 <p style = "color:pink";>   <%= link_to "Would you like to loan another item?" , jewelleries_path %> </p>
 <p style = "color:pink;"> By loaning this item you have helped save the planet, thank you! </p>
 <p> <%= link_to "Back", loans_path(@loans) %> </p>
 </div>
+

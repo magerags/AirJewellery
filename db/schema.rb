@@ -43,7 +43,9 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
     t.string "is_rented"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "jewellery_id", null: false
     t.bigint "user_id", null: false
+    t.index ["jewellery_id"], name: "index_jewelleries_on_jewellery_id"
     t.index ["user_id"], name: "index_jewelleries_on_user_id"
   end
 
@@ -71,6 +73,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "jewelleries", "jewelleries"
   add_foreign_key "jewelleries", "users"
   add_foreign_key "loans", "jewelleries"
   add_foreign_key "loans", "users"
