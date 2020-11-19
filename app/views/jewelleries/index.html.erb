@@ -1,7 +1,7 @@
 
 <br>
 <h1 class="text-center gradient">Jewelleries</h1>
-
+    <div class = "path">
     <%= form_tag jewelleries_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
@@ -11,6 +11,7 @@
   <br>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+
 <div class="row">
     <div class="col">
     <% if @query %>
@@ -19,6 +20,7 @@
         <p style = "color:pink;">All <%= Jewellery.count %> jewelleries.</p>
       <% end %>
     </div>
+  </div>
   </div>
    <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
@@ -31,6 +33,7 @@
       <% end %>
       <div class="card-body">
           <h5 style="color: pink;"><%= jewellery.name %></h5>
+          <p style ="color pink;"> £ <%= jewellery.price %> per day </p>
       </div>
     </div>
     <% end %>

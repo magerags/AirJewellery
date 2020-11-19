@@ -1,8 +1,8 @@
-profile
 <div class="wrapper">
-<div class= "container">
+<div class= "card-price">
 <h2 style ="color:pink;">  Your loan is <%= @loan.jewellery.name %></h2>
   <p style = "color:pink;"> <%= @loan.jewellery.description %></p>
+  <p style ="color:pink;"> Your total price will be £ <%= @loan.total_price %>
 <%= link_to loan_path(@loan),
 
       method: :delete,
