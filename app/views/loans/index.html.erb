@@ -1,0 +1,15 @@
+<div class="wrapper">
+    <% @loans.each do |loan| %>
+    <%= link_to loan do%>
+    <div class="card">
+      <div class="card-body">
+        <%= loan.from %><%= loan.to %>
+      </div>
+    </div>
+    <% end %>
+<% end %>
+
+</div>
+<div>
+<%= link_to "Back", jewelleries_path(@jewelleries), class: "btn btn-primary mx-1" %>
+</div>

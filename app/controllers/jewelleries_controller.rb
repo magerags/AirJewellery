@@ -10,6 +10,10 @@ class JewelleriesController < ApplicationController
   end
 end
 
+def listings
+  @jewelleries = current_user.jewelleries
+end
+
   def show
     @jewellery
   end

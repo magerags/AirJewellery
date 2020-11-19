@@ -1,6 +1,9 @@
 class LoansController < ApplicationController
-  before_action :set_loan, only: [:show, :destroy]
+  before_action :set_loan, only: [ :show, :destroy]
 
+def index
+  @loans = current_user.loans
+end
 
   def show
   end
