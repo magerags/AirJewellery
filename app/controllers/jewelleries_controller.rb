@@ -2,8 +2,13 @@ class JewelleriesController < ApplicationController
   before_action :set_jewellery, only: [:show, :edit, :update, :destroy]
 
   def index
+    if params[:query].present?
+      @query = params[:query]
+      @jewelleries = Jewellery.where("name LIKE ?", "%#{@query}%")
+     else
     @jewelleries = Jewellery.all
   end
+end
 
   def show
     @jewellery
