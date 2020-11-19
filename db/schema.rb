@@ -72,11 +72,8 @@ ActiveRecord::Schema.define(version: 2020_11_18_114804) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-  add_foreign_key "jewelleries", "jewelleries"
-=======
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
->>>>>>> ad77a929867ee9fa8618be06f8a2bdc3c5465f12
+  add_foreign_key "jewelleries", "jewelleries"
   add_foreign_key "jewelleries", "users"
   add_foreign_key "loans", "jewelleries"
   add_foreign_key "loans", "users"
