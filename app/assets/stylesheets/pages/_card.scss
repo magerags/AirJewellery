@@ -78,5 +78,11 @@ a:hover {
   text-align: center;
   background-color: black;
   border-radius: 10px;
+}
 
+
+.page-container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
 }

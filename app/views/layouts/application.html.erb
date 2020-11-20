@@ -13,10 +13,13 @@
 
   </head>
 <body style="background-color:black;">
-    <%= render "shared/navbar" %>
-      <%= yield %>
+  <div class="page-container">
+  <div class="navbar-container"><%= render "shared/navbar" %></div>
+  <div class="content-container"><%= yield %></div>
+  <div class="footer-container"><%= render "shared/footer" %></div>
+</div>
     <% if notice %>
-  <div class="alert alert-info alert-dismissible" role="alert">
+    <div class="alert alert-info alert-dismissible" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <%= notice %>
   </div>
@@ -27,6 +30,5 @@
     <%= alert %>
   </div>
 <% end %>
-<%= render "shared/footer" %>
   </body>
 </html>
