@@ -5,15 +5,12 @@ class Loan < ApplicationRecord
   validates :from, :to, presence: true, availability: true
   validate :from_after_to
 
-
-
   def assign_total_price
     self.total_price = extract_total_price
   end
 
   def extract_total_price
     extract_days * self.jewellery.price
-
   end
 
   def extract_days
