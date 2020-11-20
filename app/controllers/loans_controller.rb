@@ -23,6 +23,8 @@ class LoansController < ApplicationController
     authorize @loan
     if @loan.save
       redirect_to loan_path(@loan)
+    else
+      render :new
     end
   end
 

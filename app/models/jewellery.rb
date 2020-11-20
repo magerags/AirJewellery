@@ -4,7 +4,7 @@ class Jewellery < ApplicationRecord
   has_many :loans
 
   def unavailable_dates
-    loans.pluck(:to, :from).map do |range|
+    loans.pluck(:from, :to).map do |range|
       { from: range[0], to: range[1] }
     end
   end

@@ -1,9 +1,9 @@
 import flatpickr from 'flatpickr';
 
 const toggleDateInputs = function() {
-  const startDateInput = document.getElementById('loan_to');
+  const startDateInput = document.getElementById('loan_from');
   console.log(startDateInput)
-  const endDateInput = document.getElementById('loan_from');
+  const endDateInput = document.getElementById('loan_to');
   console.log(endDateInput)
 
   if (startDateInput && endDateInput) {
