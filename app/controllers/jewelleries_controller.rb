@@ -5,10 +5,14 @@ class JewelleriesController < ApplicationController
     if params[:query].present?
       @query = params[:query]
       @jewelleries = Jewellery.where("name LIKE ?", "%#{@query}%")
-     else
-    @jewelleries = Jewellery.all
+    else
+      @jewelleries = policy_scope(Jewellery)
+    end
   end
-end
+
+  def listings
+    @jewelleries = policy_scope(Jewellery).where(:user => current_user)
+  end
 
   def show
     @jewellery
@@ -17,17 +21,20 @@ end
 
   def new
     @jewellery = Jewellery.new
+    authorize @jewellery
   end
 
   def create
     @jewellery = Jewellery.new(jewellery_params)
     @jewellery.user = current_user
+    authorize @jewellery
     if @jewellery.save
       redirect_to jewelleries_path(@jewellery)
     else
       render :new
     end
   end
+
   def edit
   end
 
@@ -49,5 +56,6 @@ end
 
   def set_jewellery
     @jewellery = Jewellery.find(params[:id])
+    authorize @jewellery
   end
 end

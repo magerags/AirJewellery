@@ -1,11 +1,41 @@
-.form-control{
+.form-path{
   width:200px;
   font-size: 16px;
-  color: pink;
-  background: #black;
   padding: 15px 15px 15px 15px;
-  border: 5px solid black;
+  border: 5px;
+  color: pink;
   border-radius: 10px;
   justify-content: center;
-  box-shadow: 5px 5px pink;
+  box-shadow: 0 4px 8px 0 pink;
+  background-color: black;
+  box-border : black;
+}
+
+::placeholder{
+  color: pink;
+}
+
+.form-path{
+  margin-bottom: 5px;
+}
+
+.form-inputs{
+  width:1000px;
+  font-size: 16px;
+  padding: 15px 15px 15px 15px;
+  border: 5px;
+  color: pink;
+  border-radius: 10px;
+  justify-content: center;
+  box-shadow: 0 4px 8px 0 pink;
+  background-color: black;
+  box-border : black;
+}
+
+::placeholder{
+  color: pink;
+}
+
+.form-inputs{
+  margin-bottom: 5px;
 }

@@ -1,7 +1,7 @@
 <div class="form-show">
         <%= simple_form_for([ @jewellery, @loan ]) do |form| %>
-         <h2 style ="color:pink;"><%= form.input :to, html5: true  %></h2>
           <h2 style ="color:pink;"><%= form.input :from, html5: true %></h2>
+          <h2 style ="color:pink;"><%= form.input :to, html5: true %></h2>
           <%= form.button :submit, class: "btn-success" %>
         <% end %>
 

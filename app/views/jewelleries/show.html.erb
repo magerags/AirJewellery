@@ -35,7 +35,7 @@
 <br>
 
 <% if @jewellery.loan %>
-<h4 class="text-center gradient"><%= link_to "SHOW LOAN", loan_path(@jewellery.loan) %></h4>
+<h4 class="text-center gradient"><%= link_to "SHOW LOAN", loans_path %></h4>
 <% else %>
 <div class="form-show">
         <%= simple_form_for([ @jewellery, @loan ]) do |form| %>
