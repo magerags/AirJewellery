@@ -2,8 +2,8 @@
 <div class="widget-content d-none" data-unavailable="<%= @jewellery.unavailable_dates.to_json %>"></div>
 
 <%= simple_form_for([@jewellery, @loan]) do |f| %>
-  <%= f.input :to, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
-  <%= f.input :from, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :from, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :to, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
   <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
 <% end %>
 
