@@ -3,15 +3,17 @@
     <%= link_to loan do%>
     <div class="card">
       <div class="card-body">
-        <%= loan.from.strftime("%A, %b %d") %>|<%= loan.to.strftime("%A, %b %d") %> £<%= loan.total_price %>
+        <p><%= loan.from.strftime("%A, %b %d") %> to
+        <%= loan.to.strftime("%A, %b %d") %> </p>
+       <p> £<%= loan.total_price %> </p>
       </div>
     </div>
     <% end %>
 <% end %>
 </div>
 
-<div class ="wrap ml-5">
-<button class ="button">
-<%= link_to "Back", jewelleries_path(@jewelleries) %>
-</button>
+
+
+<div class ="text-center w-100">
+<%= link_to "Back", jewelleries_path(@jewelleries), class: "button" %>
 </div>

@@ -6,8 +6,10 @@
 }
 
 .button {
-  width: 140px;
-  height: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   font-family: 'Roboto', sans-serif;
   font-size: 11px;
   text-transform: uppercase;
@@ -21,6 +23,11 @@
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
+  white-space: nowrap;
+  width: fit-content;
+  display: flex;
+  line-height: 0;
+  text-align: center;
   }
 
 .button:hover {
