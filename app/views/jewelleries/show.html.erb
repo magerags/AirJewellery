@@ -21,21 +21,24 @@
   <div class="col-sm-12 col-md-6 col-lg-3"><%= cl_image_tag photo.key, height: 200, width: 300, crop: :fill %></div>
 <% end %>
 </div>
+<% if @jewellery.loans.where(user: current_user).present? %>
+<h4 class="text-center gradient"><%= link_to "SHOW LOAN", loans_path %></h4>
+<% elsif current_user != @jewellery.user %>
+<h2 class="text-center gradient my-5"><%= link_to "RENT THIS ITEM!", new_jewellery_loan_path(@jewellery) %></h2>
+<% end %>
 <div class="text-center">
 <%= link_to jewelleries_path do %>
 <button class="btn btn-primary mx-1">back</button>
 <% end %>
+<% if policy(@jewellery).update? %>
 <%= link_to edit_jewellery_path do %>
 <button class="btn btn-primary mx-1">edit</button>
 <% end %>
+<% end %>
+<% if policy(@jewellery).destroy? %>
 <%= link_to @jewellery, method: :delete, data: { confirm: 'Are you sure?'} do %>
 <button class="btn btn-primary mx-1">delete</button>
 <% end %>
+<% end %>
 </div>
 <br>
-
-<% if @jewellery.loans.where(user: current_user).present? %>
-<h4 class="text-center gradient"><%= link_to "SHOW LOAN", loans_path %></h4>
-<% elsif current_user != @jewellery.user %>
-<h4 class="text-center gradient"><%= link_to "NEW LOAN", new_jewellery_loan_path(@jewellery) %></h4>
-<% end %>
