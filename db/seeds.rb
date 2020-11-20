@@ -22,7 +22,7 @@ tom = User.create!(email: 'tom@tom.com', password: '123456')
     name: "#{fe.sample} #{se.sample} with #{te.sample}",
     description: Faker::Lorem.sentence(word_count: 20),
     price: rand(0..100),
-    photo: 'https://loremflickr.com/400/400/jewellery',
+    # photo: 'https://loremflickr.com/400/400/jewellery',
     user: tom
   )
 end

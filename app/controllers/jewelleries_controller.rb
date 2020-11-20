@@ -16,6 +16,7 @@ class JewelleriesController < ApplicationController
 
   def show
     @jewellery
+    @loan = Loan.new
   end
 
   def new
