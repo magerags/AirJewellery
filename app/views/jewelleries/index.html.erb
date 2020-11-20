@@ -8,11 +8,12 @@
     class: "form-path",
     placeholder: "Find a jewellery"
   %>
-  <br>
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
+<br>
+</div>
 
-<div class="row">
+<div class="row text-center mt-3">
     <div class="col">
     <% if @query %>
         <p style = "color:pink;">You searched for <strong><%= @query %></strong>. We found <%= @jewelleries.count %> jewelleries out of our <%= Jewellery.count %> on our website.</p>
@@ -21,7 +22,7 @@
       <% end %>
     </div>
   </div>
-  </div>
+  <div class="container2">
    <div class="wrapper">
     <% @jewelleries.each do |jewellery| %>
     <%= link_to jewellery do%>
@@ -29,18 +30,21 @@
       <% if jewellery.photos.attached? %>
       <div class="card-image" style="background-image: url('<%= cl_image_path jewellery.photos.first.key, height: 200, width: 300, crop: :fill %>')"></div>
       <% else %>
-      <div class="card-image" style="background-image: url('https://loremflickr.com/400/400/jewellery')"></div>
+         <div class="card-image2"><%= image_tag 'diamond_placeholder.png' %></div>
       <% end %>
       <div class="card-body">
-          <h5 style="color: pink;"><%= jewellery.name %></h5>
-          <p style ="color pink;"> £ <%= jewellery.price %> per day </p>
+          <h5 style=""><%= jewellery.name %></h5>
+          <p class="ml-3 mt-1" style ="font-size: 20px;"> £<%= jewellery.price %></p>
       </div>
     </div>
     <% end %>
 <% end %>
-<div class="form-actions btun btn-primary">
-<%= link_to 'New Jewellery', new_jewellery_path %>
 </div>
+</div>
+<div class="form-actions text-center mb-5">
+  <h1 style="font-size: 60px;">
+<%= link_to 'add your own here!', new_jewellery_path %>
+  </h1>
 </div>
 <br>
 
