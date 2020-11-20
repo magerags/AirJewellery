@@ -8,7 +8,9 @@
     </div>
     <% end %>
 <% end %>
-
-
 </div>
-<%= link_to "Back", jewelleries_path(@jewelleries) %>
+<div>
+<%= link_to jewelleries_path(@jewellery) do %>
+<button class="btn btn-primary ml-5">back</button>
+<% end %>
+</div>
