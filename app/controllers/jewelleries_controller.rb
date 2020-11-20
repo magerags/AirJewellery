@@ -4,7 +4,7 @@ class JewelleriesController < ApplicationController
   def index
     if params[:query].present?
       @query = params[:query]
-      @jewelleries = Jewellery.where("name LIKE ?", "%#{@query}%")
+      @jewelleries = policy_scope(Jewellery).where("name LIKE ?", "%#{@query}%")
     else
       @jewelleries = policy_scope(Jewellery)
     end
