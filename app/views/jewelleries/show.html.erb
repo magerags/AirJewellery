@@ -34,8 +34,8 @@
 </div>
 <br>
 
-<% if @jewellery.loan %>
+<% if @jewellery.loans.where(user: current_user).present? %>
 <h4 class="text-center gradient"><%= link_to "SHOW LOAN", loans_path %></h4>
-<% else %>
+<% elsif current_user != @jewellery.user %>
 <h4 class="text-center gradient"><%= link_to "NEW LOAN", new_jewellery_loan_path(@jewellery) %></h4>
 <% end %>

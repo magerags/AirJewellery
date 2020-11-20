@@ -2,6 +2,7 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
+@import "flatpickr/dist/flatpickr";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -13,6 +14,7 @@
 @import "pages/index";
 @import "components/navbar";
 @import "pages/jewelleries/index";
+@import "pages/loans/new";
 
 body {
   background: black;

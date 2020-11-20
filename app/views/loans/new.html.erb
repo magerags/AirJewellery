@@ -1,10 +1,11 @@
-<div class="form-show">
-        <%= simple_form_for([ @jewellery, @loan ]) do |form| %>
-         <h2 style ="color:pink;"><%= form.input :from %></h2>
-          <h2 style ="color:pink;"><%= form.input :to %></h2>
-          <%= form.button :submit, class: "btn-success" %>
-        <% end %>
+<div class="form-new">
+<div class="widget-content d-none" data-unavailable="<%= @jewellery.unavailable_dates.to_json %>"></div>
 
-</div>
+<%= simple_form_for([@jewellery, @loan]) do |f| %>
+  <%= f.input :to, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :from, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.submit "book", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+<% end %>
 
 <%= link_to "Go back", jewellery_path(@jewellery)%>
+</div>
