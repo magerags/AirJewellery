@@ -2,22 +2,23 @@
 <div class= "card-price">
 <h2 style ="color:pink;">  Your loan is <%= @loan.jewellery.name %></h2>
   <p style = "color:pink;"> <%= @loan.jewellery.description %></p>
-  <p style ="color:pink;"> Your total price will be £ <%= @loan.total_price %>
-<%= link_to loan_path(@loan),
+  <p style ="color:pink;"> Your total price will be £ <%= @loan.total_price %></p>
+<p><%= link_to loan_path(@loan),
 
       method: :delete,
       data: { confirm: "Are you sure?" } do %>
       <i class="fas fa-minus-circle"></i>
-      <% end %>
+      <% end %></p>
 
     </div>
 <p style = "color:pink";>   <%= link_to "Would you like to loan another item?" , jewelleries_path %> </p>
 <p style = "color:pink;"> By loaning this item you have helped save the planet, thank you! </p>
 </div>
-<div class ="wrap">
-<button class ="button">
- <%= link_to "Back", loans_path(@loans) %>
-</button>
+<div class ="wrap ml-5">
+
+ <%= link_to "Back", loans_path(@loans), class: "button" %>
 </div>
+</div>
+
 
 
