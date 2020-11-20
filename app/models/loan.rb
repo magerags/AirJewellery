@@ -2,6 +2,9 @@ class Loan < ApplicationRecord
   belongs_to :user
   belongs_to :jewellery
   before_create :assign_total_price
+  validates :to, :from, presence: true, availability: true
+  validate :from_after_to
+
 
 
 def assign_total_price
@@ -16,4 +19,11 @@ end
   def extract_days
    ((self.to - self.from) / 3600 / 24).to_i
   end
+end
+    private
+def from_after_to
+    return if from.blank? || to.blank?
+    if from < to
+      errors.add(:to, "must be after the start date")
+    end
 end
